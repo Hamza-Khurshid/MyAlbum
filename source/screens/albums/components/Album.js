@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './style'
+import { useNavigation } from '@react-navigation/native'
 import { View, Text, Image, TouchableOpacity } from 'react-native'
 
 import EMAIL from '../../../assets/icons/email.png'
@@ -7,9 +8,15 @@ import USER from '../../../assets/icons/user.png'
 import WEB from '../../../assets/icons/web.png'
 
 export default function Album({ album }) {
+    const navigation = useNavigation()
+
+    const pressHandler = () => {
+        navigation.navigate('Gallery', { album })
+    }
+
     return (
         <View style={[styles.albumContainer]}>
-            <TouchableOpacity style={{ activeOpacity: 0.9 }}>
+            <TouchableOpacity style={{ activeOpacity: 0.9 }} onPress={pressHandler}>
                 <View style={styles.albumContentContainer}>
                     
                     <Text style={styles.albumTitle}>{album.title}</Text>

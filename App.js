@@ -1,24 +1,23 @@
 import React from 'react';
 import {
-  View,
   StatusBar
 } from 'react-native';
-import theme from './source/constants/theme';
-import Albums from './source/screens/albums';
+import AppNavigation from './source/navigation';
+import { NavigationContainer } from '@react-navigation/native';
 
 const App = () => {
 
   return (
-    <React.Fragment>
+    <NavigationContainer>
 
       <StatusBar
         barStyle='light-content'
         backgroundColor='black' 
       />
 
-      <Albums />
+      <AppNavigation />
 
-    </React.Fragment>
+    </NavigationContainer>
   )
 
 };

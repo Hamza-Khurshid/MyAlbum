@@ -2,12 +2,11 @@ import React from 'react'
 import {
     View, 
     FlatList,
-    Dimensions, 
-    RefreshControl, 
     ActivityIndicator,
 } from 'react-native'
 import Album from './components/Album'
 import { useAlbums } from './useAlbums'
+import styles from './style'
 
 export default function Albums() {
     const [
@@ -17,6 +16,8 @@ export default function Albums() {
 
     return (
         <View>
+            
+            {/* Albums list */}
             <FlatList
                 data={albums}
                 renderItem={({ item }) => (
@@ -25,9 +26,10 @@ export default function Albums() {
                 keyExtractor={(item) => item.id.toString()}
             />
 
+            {/* Loading overlay */}
             {
                 isLoading ?
-                    <View style={{ height: Dimensions.get('window').height, backgroundColor: '#ccc', width: '100%', position: 'absolute', justifyContent: 'center', alignItems: 'center' }}>
+                    <View style={styles.loadingView}>
                         <ActivityIndicator color='black' />
                     </View>
                 :
