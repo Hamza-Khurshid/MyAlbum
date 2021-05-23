@@ -1,9 +1,23 @@
-import { useEffect, useState } from 'react'
+import React, { 
+    useEffect, 
+    useState, 
+    useLayoutEffect 
+} from 'react'
 import axios from 'axios'
+import {
+    Image,
+    TouchableOpacity, 
+ } from 'react-native'
+ import { useNavigation } from '@react-navigation/native'
+ import FILTER_ICON from '../../assets/icons/filter.png'
 
 export const useAlbums = () => {
+    const navigation = useNavigation()
     const [albums, setAlbums] = useState([])
+    const [albumsBackup, setAlbumsBackup] = useState([])
+    const [filter, setFilter] = useState('')
     const [isLoading, setLoading] = useState(true)
+    const [isFilterModal, setFilterModal] = useState(false)
 
     const fetchData = () => {
         if(albums.length === 0) {
@@ -37,6 +51,7 @@ export const useAlbums = () => {
                             })
     
                             setAlbums(allAlbums)
+                            setAlbumsBackup(allAlbums)
                             setLoading(false)
                         }).catch((error) => {
                             setLoading(false)
@@ -57,8 +72,32 @@ export const useAlbums = () => {
         fetchData()
     }, [])
 
+    useEffect(() => {
+        if(filter === "") {
+            setAlbums([...albumsBackup])
+        } else {
+            let newAlbums = [...albumsBackup].filter(album => album.userId === filter)
+            setAlbums(newAlbums)
+        }
+    }, [filter])
+
+    useLayoutEffect(() => {
+        navigation.setOptions({
+            headerRight: () => (
+                <TouchableOpacity style={{ marginRight: 15 }} onPress={()=>setFilterModal(true)}>
+                    <Image source={FILTER_ICON} style={{ height: 25, width: 25 }} /> 
+                </TouchableOpacity>
+            )
+        })
+    }, [navigation])
+
     return [
         albums,
         isLoading,
+        filter,
+        setFilter,
+        albumsBackup,
+        isFilterModal,
+        setFilterModal,
     ];
 }

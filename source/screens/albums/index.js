@@ -1,18 +1,24 @@
 import React from 'react'
 import {
-    View, 
+    View,
     FlatList,
     ActivityIndicator,
 } from 'react-native'
+import styles from './style'
 import Album from './components/Album'
 import { useAlbums } from './useAlbums'
-import styles from './style'
+import AlbumsFilter from './components/AlbumsFilter'
 
 export default function Albums() {
     const [
         albums,
         isLoading,
-     ] = useAlbums();
+        filter,
+        setFilter,
+        albumsBackup,
+        isFilterModal,
+        setFilterModal,
+    ] = useAlbums();
 
     return (
         <View>
@@ -23,7 +29,17 @@ export default function Albums() {
                 renderItem={({ item }) => (
                   <Album album={item} />  
                 )}
+                style={{ paddingTop: 10 }}
                 keyExtractor={(item) => item.id.toString()}
+            />
+
+            {/* Albums Filter Modal */}
+            <AlbumsFilter
+                filter={filter}
+                albums={albumsBackup}
+                setFilter={setFilter}
+                isModal={isFilterModal}
+                setModal={setFilterModal}
             />
 
             {/* Loading overlay */}

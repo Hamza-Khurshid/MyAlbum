@@ -1,10 +1,10 @@
 import { Dimensions, View, FlatList, ActivityIndicator } from 'react-native'
 import { useRoute } from '@react-navigation/native'
+import SmallPhoto from './components/SmallPhoto'
 import { useGallery } from './useGallery'
+import Photo from './components/Photo'
 import styles from './style'
 import React from 'react'
-import Photo from './components/Photo'
-import SmallPhoto from './components/SmallPhoto'
 
 const { width } = Dimensions.get('window')
 

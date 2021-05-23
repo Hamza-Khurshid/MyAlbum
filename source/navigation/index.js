@@ -1,6 +1,4 @@
 import React from 'react';
-import FILTER_ICON from '../assets/icons/filter.png';
-import { Image, TouchableOpacity } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import AlbumScreen from '../screens/albums';
@@ -15,8 +13,8 @@ export default () => {
                 name="Album"
                 component={AlbumScreen}
                 options={{ 
-                    title: 'Photo Album App', 
-                    headerTitleStyle: { alignSelf: 'center' },
+                    title: '         Photo Album App', 
+                    headerTitleStyle: { alignSelf: 'center' }, 
                 }}
             />
             <Stack.Screen 
