@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Photo renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "height": 1274,
+      "width": 750,
+    }
+  }
+>
+  <Image
+    source={
+      Object {
+        "uri": "",
+      }
+    }
+    style={
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }
+  />
+  <Text
+    style={
+      Object {
+        "bottom": 200,
+        "fontSize": 16,
+        "position": "absolute",
+        "textAlign": "center",
+        "width": "100%",
+      }
+    }
+  >
+    
+  </Text>
+</View>
+`;
+
+exports[`SmallPhoto renders correctly 1`] = `
+<View
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+    }
+  }
+>
+  <Image
+    source={
+      Object {
+        "uri": "",
+      }
+    }
+    style={
+      Array [
+        Object {
+          "borderColor": "gray",
+          "borderRadius": 10,
+          "borderWidth": 1,
+          "height": 80,
+          "marginRight": 10,
+          "width": 80,
+        },
+        Object {
+          "borderColor": "white",
+          "borderWidth": 2,
+        },
+      ]
+    }
+  />
+</View>
+`;

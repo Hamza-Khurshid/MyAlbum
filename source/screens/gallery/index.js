@@ -24,7 +24,6 @@ export default function Gallery() {
     return (
         <View>
 
-            {/* Big photo slider */}
             <FlatList
                 horizontal
                 data={photos}
@@ -40,7 +39,6 @@ export default function Gallery() {
                 keyExtractor={(item) => item.id.toString()}
             />
 
-            {/* Small photo slider */}
             <FlatList
                 horizontal
                 data={photos}
@@ -59,7 +57,6 @@ export default function Gallery() {
                 contentContainerStyle={styles.smallListContainer}
             />
 
-            {/* Loading overlay */}
             {
                 isLoading ?
                     <View style={styles.loadingView}>

@@ -1,11 +1,8 @@
 import React from 'react'
 import { Modal, Picker, View, Text, TouchableOpacity } from 'react-native'
-import { uniqueArray } from '../../../utils/helpers'
 import styles from './style'
 
 export default function AlbumsFilter({ albums, isModal, setModal, filter, setFilter }) {
-    let users = uniqueArray(albums, 'userId')
-
     return (
         <Modal visible={isModal} transparent>
             <View style={styles.filterContainer}>
@@ -19,7 +16,7 @@ export default function AlbumsFilter({ albums, isModal, setModal, filter, setFil
                     >
                         <Picker.Item label="Select User" value="" />
                         {
-                            users.map((album, index) => (
+                            albums.map((album, index) => (
                                 <Picker.Item key={index} label={album.name} value={album.userId} />
                             ))
                         }

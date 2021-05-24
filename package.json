@@ -32,6 +32,15 @@
     "react-test-renderer": "17.0.1"
   },
   "jest": {
-    "preset": "react-native"
+    "preset": "react-native",
+    "setupFiles": [
+      "./node_modules/react-native-gesture-handler/jestSetup.js",
+      "<rootDir>/mocks/jest-setup.js"
+    ],
+    "transformIgnorePatterns": [
+      "node_modules/(?!(jest-)?@?react-native|@react-native-community|@react-navigation)",
+      "__tests__/mocks"
+    ],
+    "modulePathIgnorePatterns": ["./__tests__/mocks"]
   }
 }

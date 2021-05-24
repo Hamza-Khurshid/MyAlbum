@@ -8,6 +8,7 @@ import styles from './style'
 import Album from './components/Album'
 import { useAlbums } from './useAlbums'
 import AlbumsFilter from './components/AlbumsFilter'
+import { uniqueArray } from '../../utils/helpers'
 
 export default function Albums() {
     const [
@@ -23,7 +24,6 @@ export default function Albums() {
     return (
         <View>
             
-            {/* Albums list */}
             <FlatList
                 data={albums}
                 renderItem={({ item }) => (
@@ -33,16 +33,14 @@ export default function Albums() {
                 keyExtractor={(item) => item.id.toString()}
             />
 
-            {/* Albums Filter Modal */}
             <AlbumsFilter
                 filter={filter}
-                albums={albumsBackup}
                 setFilter={setFilter}
                 isModal={isFilterModal}
                 setModal={setFilterModal}
+                albums={uniqueArray(albumsBackup)}
             />
 
-            {/* Loading overlay */}
             {
                 isLoading ?
                     <View style={styles.loadingView}>
