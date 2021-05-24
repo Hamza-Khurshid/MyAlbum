@@ -30,7 +30,7 @@ export default function Gallery() {
                 pagingEnabled
                 ref={bgListRef}
                 renderItem={({ item }) => (
-                  <Photo photo={item} />
+                  <Photo photo={item} album={album.title} />
                 )}
                 onMomentumScrollEnd={event => {
                     setActivePos(Math.floor(event.nativeEvent.contentOffset.x/width))

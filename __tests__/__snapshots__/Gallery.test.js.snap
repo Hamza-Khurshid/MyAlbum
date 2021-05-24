@@ -4,7 +4,7 @@ exports[`Photo renders correctly 1`] = `
 <View
   style={
     Object {
-      "height": 1274,
+      "height": 1334,
       "width": 750,
     }
   }
@@ -29,6 +29,7 @@ exports[`Photo renders correctly 1`] = `
     style={
       Object {
         "bottom": 200,
+        "color": "white",
         "fontSize": 16,
         "position": "absolute",
         "textAlign": "center",
@@ -38,6 +39,19 @@ exports[`Photo renders correctly 1`] = `
   >
     
   </Text>
+  <Text
+    style={
+      Object {
+        "color": "white",
+        "fontSize": 22,
+        "paddingHorizontal": 10,
+        "position": "absolute",
+        "textAlign": "center",
+        "top": 40,
+        "width": "100%",
+      }
+    }
+  />
 </View>
 `;
 

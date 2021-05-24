@@ -1,3 +1,3 @@
 export default {
-    statusbar: '#000000',
+    statusbar: '#2C4058',
 } 

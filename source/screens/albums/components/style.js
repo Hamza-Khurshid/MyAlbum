@@ -1,4 +1,5 @@
 import { StyleSheet, Dimensions } from 'react-native'
+import theme from '../../../constants/theme';
 
 const { height } = Dimensions.get('window')
 
@@ -7,7 +8,7 @@ export default StyleSheet.create({
         width: '100%',
         marginBottom: 10,
         paddingLeft: 10,
-        paddingRight: 10
+        paddingRight: 10,
     },
     albumContentContainer: {
         padding: 6,
@@ -42,14 +43,16 @@ export default StyleSheet.create({
         marginTop: 'auto',
         marginHorizontal: 10,
         marginBottom: 'auto',
-        backgroundColor: 'white'
+        backgroundColor: theme.statusbar
     },
     title: {
         fontSize: 22,
         marginTop: 6,
         borderWidth: 1,
+        color: "white",
         borderRadius: 5,
         textAlign: 'center',
+        borderColor: "white",
     },
     filterView: {
         width: '80%',
@@ -59,10 +62,12 @@ export default StyleSheet.create({
         marginRight: 'auto',
         marginBottom: 'auto',
         alignItems: 'center',
+        borderColor: "white",
         justifyContent: 'center',
     },
     closeText: {
         fontSize: 16,
+        color: "white",
         marginBottom: 15,
         textAlign: 'center',
     }

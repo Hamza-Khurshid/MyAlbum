@@ -11,7 +11,7 @@ export default function AlbumsFilter({ albums, isModal, setModal, filter, setFil
                 <View style={styles.filterView}>
                     <Picker
                         selectedValue={filter}
-                        style={{ height: 50, width: 150 }}
+                        style={{ height: 50, width: 150, color: "white" }}
                         onValueChange={(itemValue) => {setFilter(itemValue); setModal(false)}}
                     >
                         <Picker.Item label="Select User" value="" />

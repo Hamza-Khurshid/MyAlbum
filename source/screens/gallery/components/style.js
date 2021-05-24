@@ -5,15 +5,25 @@ const { height, width } = Dimensions.get('window');
 export default StyleSheet.create({
     photoContainer: {
         width,
-        height: height-60
+        height,
     },
     photo: {
         ...StyleSheet.absoluteFillObject
+    },
+    albumTitle: {
+        top: 40,
+        color: "white",
+        width: '100%',
+        fontSize: 22,
+        paddingHorizontal: 10,
+        textAlign: 'center',
+        position: 'absolute',
     },
     photoTitle: {
         bottom: 200,
         width: '100%',
         fontSize: 16,
+        color: "white",
         textAlign: 'center',
         position: 'absolute',
     },

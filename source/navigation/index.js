@@ -14,17 +14,16 @@ export default () => {
                 component={AlbumScreen}
                 options={{ 
                     title: '         Photo Album App', 
-                    headerTitleStyle: { alignSelf: 'center' }, 
+                    headerStyle: { backgroundColor: "#2C4058" },
+                    headerTitleStyle: { color: "white", alignSelf: 'center' },
                 }}
             />
             <Stack.Screen 
                 name="Gallery"
                 component={GalleryScreen}
-                options={
-                    ({ route }) => ({ 
-                        title: route.params.album.title, 
-                    })
-                }
+                options={{
+                    headerShown: false
+                }}
             />
         </Stack.Navigator>
     );

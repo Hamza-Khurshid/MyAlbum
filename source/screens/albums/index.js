@@ -19,6 +19,7 @@ export default function Albums() {
         albumsBackup,
         isFilterModal,
         setFilterModal,
+        onListEndReached,
     ] = useAlbums();
 
     return (
@@ -30,7 +31,10 @@ export default function Albums() {
                   <Album album={item} />  
                 )}
                 style={{ paddingTop: 10 }}
+                onEndReachedThreshold={0.5}
+                onEndReached={onListEndReached}
                 keyExtractor={(item) => item.id.toString()}
+                ListFooterComponent={isLoading ? <ActivityIndicator color="black" style={{ margin: 15 }} /> : null}
             />
 
             <AlbumsFilter
@@ -38,11 +42,11 @@ export default function Albums() {
                 setFilter={setFilter}
                 isModal={isFilterModal}
                 setModal={setFilterModal}
-                albums={uniqueArray(albumsBackup)}
+                albums={uniqueArray(albumsBackup, 'userId')}
             />
 
             {
-                isLoading ?
+                isLoading && albums.length === 0 ?
                     <View style={styles.loadingView}>
                         <ActivityIndicator color='black' />
                     </View>
